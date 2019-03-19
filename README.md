@@ -1,0 +1,1 @@
+This is an Spring MVC project with basic login mechanism.
