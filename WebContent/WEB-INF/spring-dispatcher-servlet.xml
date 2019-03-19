@@ -1,0 +1,29 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+ 	<!-- Scan these packages/classes for annotations -->
+	<context:component-scan base-package="com.first.firstcontroller" />
+	
+	<context:annotation-config />
+	
+	<!--  Validators : All validators are @Autowired in the respective Controllers.-->
+	<bean name="LoginValidator" class="com.first.firstvalidator.LoginValidator"></bean>
+
+ 	
+ 	<!-- View Resolver -->
+	<bean id="viewResolver"
+	      class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+          <property name="prefix">
+              <value>/WEB-INF/pages/</value>
+           </property>
+          <property name="suffix">
+             <value>.jsp</value>
+          </property>
+    </bean>
+
+</beans>
